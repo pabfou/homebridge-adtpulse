@@ -102,6 +102,7 @@ getServices: function() {
 
 				return [this.securityService];
 		}
+};
 
 // code from adt-pulse below this line
 
@@ -491,4 +492,4 @@ module.exports = pulse;
 	}
 }).call(pulse.prototype);
 
-};
+
