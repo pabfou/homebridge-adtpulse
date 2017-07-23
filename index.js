@@ -36,7 +36,7 @@ function adtpulseAccessory(log, config) {
 	myAlarm.login();
 	myStatus = myAlarm.updateAll();
 
-	console.log(myStatus());
+	console.log(myStatus);
 
 	
 }
@@ -49,7 +49,7 @@ getState() {
 	myAlarm.login();
 	myStatus = myAlarm.updateAll();
 
-	console.log(myStatus());
+	console.log(myStatus);
 
 
 	var disarmed = myStatus.contains('Disarmed');
@@ -74,7 +74,7 @@ setState(targetState) {
 	
 	myStatus = myAlarm.updateAll();
 	
-	console.log(myStatus());
+	console.log(myStatus);
 	
 	var changeState;
 
