@@ -6,4 +6,4 @@ This module is under development and not currently working.
 
 Installation
 -------
-You can install through npm: `npm install homebridge-pulse`
+You can install through npm: `npm install homebridge-adtpulse`
