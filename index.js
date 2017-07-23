@@ -66,7 +66,7 @@ setState(targetState) {
 
 	//login and update alarm status
 	myAlarm.login();
-	myAlarm.getAlarmStatus();
+	myStatus = myAlarm.getAlarmStatus();
 
 	var changeState;
 
