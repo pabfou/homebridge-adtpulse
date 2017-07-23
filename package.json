@@ -1,0 +1,35 @@
+{
+  "name": "homebridge-adtpulse",
+  "version": "0.1.1",
+  "description": "ADT Pulse SecuritySystem plugin for homebridge: https://github.com/nfarina/homebridge, with readable state",
+  "license": "ISC",
+  "keywords": [
+    "homebridge-plugin",
+    "homebridge",
+    "homekit"
+  ],
+  "engines": {
+    "node": ">=0.12.0",
+    "homebridge": ">=0.2.0"
+  },
+  "author": "Pabfou Lorez",
+  "contributors": [
+    ""
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/codetwice/homebridge-pulse.git"
+  },
+  "dependencies": {
+    "request": "latest",
+    "adt-pulse":">=0.1.0"
+  },
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/codetwice/homebridge-pulse/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
