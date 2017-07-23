@@ -18,7 +18,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/codetwice/homebridge-pulse.git"
+    "url": "git://github.com/pabfou/homebridge-adtpulse.git"
   },
   "dependencies": {
     "request": "latest",
@@ -26,7 +26,7 @@
   },
   "readmeFilename": "README.md",
   "bugs": {
-    "url": "https://github.com/codetwice/homebridge-pulse/issues"
+    "url": "https://github.com/pabfou/homebridge-adtpulse/issues"
   },
   "main": "index.js",
   "scripts": {
