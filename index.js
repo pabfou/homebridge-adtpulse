@@ -24,6 +24,8 @@ function adtpulseAccessory(log, config) {
 	this.auth.password = config.password || "";
 	this.auth.immediately = config.immediately || "true";
 
+	myStatus.update('Unknown','', ''); 
+
 	myAlarm = new pulse(this.auth.username, this.auth.password);
 
 	// Register Callbacks:
@@ -36,7 +38,7 @@ function adtpulseAccessory(log, config) {
 	//login and update alarm status
 	myAlarm.login();
 	myAlarm.updateAll();
-	console.log(myStatus);
+	console.log(myStatus.status);
 
 }
 
@@ -48,12 +50,9 @@ getState() {
 	myAlarm.login();
 	myAlarm.updateAll();
 
-	console.log(myStatus);
-
-
-	var disarmed = myStatus.contains('Disarmed');
-	var stay = myStatus.contains('Stay');
-	var away = myStatus.contains('Away');
+	var disarmed = myStatus.status.contains('Disarmed');
+	var stay = myStatus.status.contains('Stay');
+	var away = myStatus.status.contains('Away');
 
 	If (disarmed)
 		return Characteristic.SecuritySystemCurrentState.DISARMED;
@@ -70,10 +69,7 @@ setState(targetState) {
 
 	//login and update alarm status
 	myAlarm.login();
-
-	myStatus = myAlarm.updateAll();
-
-	console.log(myStatus);
+	myAlarm.updateAll();
 
 	var changeState;
 
