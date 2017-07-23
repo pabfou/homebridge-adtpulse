@@ -71,9 +71,9 @@ setState(targetState) {
 
 	var changeState;
 
-	changeState.instance = myAlarm.alarmInfo.instance;
-	changeState.units = myAlarm.alarmInfo.units;
-	changeState.newstate = targetstate;
+	changeState.instance = alarmInfo.instance;
+	changeState.units = alarmInfo.units;
+	changeState.newstate = targetState;
 
 	myAlarm.setAlarmState(changeState);
 
