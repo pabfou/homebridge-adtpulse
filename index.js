@@ -1,5 +1,4 @@
 var pulse = require('adt-pulse');
-var estato = require('adt-pulse');
 var myAlarm;
 var myStatus;
 var Service, Characteristic;
@@ -24,8 +23,6 @@ function adtpulseAccessory(log, config) {
 	this.auth.password = config.password || "";
 	this.auth.immediately = config.immediately || "true";
 	
-	
-	
 	myAlarm = new pulse(this.auth.username, this.auth.password);
 
 	// Register Callbacks:
@@ -48,7 +45,7 @@ adtpulseAccessory.prototype = {
 getState() {
 	//login and update alarm status
 	myAlarm.login();
-	myAlarm.getAlarmStatus();
+	myStatus = myAlarm.getAlarmStatus();
 
 	var disarmed = myStatus.contains('Disarmed');
 	var stay = myStatus.contains('Stay');
