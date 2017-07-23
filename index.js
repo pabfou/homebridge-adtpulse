@@ -43,7 +43,7 @@ getState() {
 	myAlarm.login();
 	myAlarm.getAlarmStatus();
 
-	var str = myAlarm.alarmInfor.status;
+	var str = myAlarm.alarmInfo.status;
 
 	var disarmed = str.contains('Disarmed');
 	var stay = str.contains('Stay');
