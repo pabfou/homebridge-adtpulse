@@ -58,15 +58,18 @@ module.exports = pulse;
 	},
 
   this.astatus = function () {
-    return adtstatus;
+    deferred.resolve(adtstatus);
+    return deferred.promise;
   },
 
   this.instance = function () {
-        return adtinstance;
+    deferred.resolve(adtinstance);
+    return deferred.promise;
   },
 
   this.units = function () {
-        return adtunits;
+    deferred.resolve(adtunits);
+    return deferred.promise;
   },
 
 	this.login = function () {
@@ -123,7 +126,7 @@ module.exports = pulse;
 			);
 		}
 
-		return deferred.promise
+		return deferred.promise;
 	},
 
 	this.logout = function () {
