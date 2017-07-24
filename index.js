@@ -23,8 +23,6 @@ function adtpulseAccessory(log, config) {
 	this.auth.password = config.password || "";
 	this.auth.immediately = config.immediately || "true";
 
-	myStatus.update('Unknown','', ''); 
-
 	myAlarm = new pulse(this.auth.username, this.auth.password);
 
 	// Register Callbacks:
