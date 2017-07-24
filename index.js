@@ -1,5 +1,4 @@
 var pulse = require('adt-pulse');
-var myStatus = require('alarm-status');
 var myAlarm;
 
 var Service, Characteristic;
@@ -38,7 +37,6 @@ function adtpulseAccessory(log, config) {
 	//login and update alarm status
 	myAlarm.login();
 	myAlarm.updateAll();
-	console.log(myStatus.status);
 
 }
 
@@ -50,9 +48,9 @@ getState() {
 	myAlarm.login();
 	myAlarm.updateAll();
 
-	var disarmed = myStatus.status.contains('Disarmed');
-	var stay = myStatus.status.contains('Stay');
-	var away = myStatus.status.contains('Away');
+	var disarmed = myAlarm.status.contains('Disarmed');
+	var stay = myAlarm.status.contains('Stay');
+	var away = myAlarm.status.contains('Away');
 
 	If (disarmed)
 		return Characteristic.SecuritySystemCurrentState.DISARMED;
@@ -73,8 +71,8 @@ setState(targetState) {
 
 	var changeState;
 
-	changeState.instance = alarmInfo.instance;
-	changeState.units = alarmInfo.units;
+	changeState.instance = myAlarm.instance;
+	changeState.units = myAlarm.units;
 	changeState.newstate = targetState;
 
 	myAlarm.setAlarmState(changeState);
