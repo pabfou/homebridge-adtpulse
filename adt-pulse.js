@@ -2,7 +2,7 @@ var tough = require('tough-cookie');
 var request = require('request');
 var q = require('q');
 var cheerio = require('cheerio');
-var status = 'unknown';
+var state = 'unknown';
 var instance = '';
 var units = '';
     
@@ -35,7 +35,7 @@ pulse = function(username, password) {
 	var pulseInterval = setInterval(this.sync.bind(this),5000);
 
 	this.status = function () { 
-        return status;
+        return state;
     };
     
 	this.instance = function () { 
@@ -321,16 +321,16 @@ module.exports = pulse;
 		);
 
 		If (statusUpdateCB.status.contains('Disarmed'))
-					 status = 'Disarmed';
+					 state = 'Disarmed';
 		If (statusUpdateCB.status.contains('Stay'))
-					 status='Stay';
+					 state='Stay';
 		If (statusUpdateCB.status.contains('Away'))
-					 status='Away';
+					 state='Away';
 
 		instance = matches[0];
 		units = matches[2];
 		
-		console.log(status);
+		console.log(state);
 
 
 		return deferred.promise;
