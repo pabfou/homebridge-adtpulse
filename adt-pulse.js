@@ -34,18 +34,6 @@ pulse = function(username, password) {
   	/* heartbeat */
 	var pulseInterval = setInterval(this.sync.bind(this),5000);
 
-	this.status = function () {
-        return adtstatus;
-    };
-
-	this.instance = function () {
-        return adtinstance;
-    };
-
-	this.units = function () {
-        return adtunits;
-    }
-
 };
 
 module.exports = pulse;
@@ -69,7 +57,17 @@ module.exports = pulse;
 		}
 	},
 
+  this.status = function () {
+    return adtstatus;
+  },
 
+  this.instance = function () {
+        return adtinstance;
+  },
+
+  this.units = function () {
+        return adtunits;
+  },
 
 	this.login = function () {
 
