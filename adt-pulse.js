@@ -58,16 +58,19 @@ module.exports = pulse;
 	},
 
   this.astatus = function () {
+    var deferred = q.defer();
     deferred.resolve(adtstatus);
     return deferred.promise;
   },
 
   this.instance = function () {
+    var deferred = q.defer();
     deferred.resolve(adtinstance);
     return deferred.promise;
   },
 
   this.units = function () {
+    var deferred = q.defer();
     deferred.resolve(adtunits);
     return deferred.promise;
   },
