@@ -2,13 +2,10 @@ var tough = require('tough-cookie');
 var request = require('request');
 var q = require('q');
 var cheerio = require('cheerio');
-var myStatus = {
-      status = 'unknown';
-      instance = '';
-      units = '';
-    }
-
-
+var status = 'unknown';
+var instance = '';
+var units = '';
+    
 //Cookie jar
 var j;
 
@@ -38,15 +35,15 @@ pulse = function(username, password) {
 	var pulseInterval = setInterval(this.sync.bind(this),5000);
 
 	this.status = function () { 
-        return myStatus.status;
+        return status;
     };
     
 	this.instance = function () { 
-        return myStatus.instance;
+        return instance;
     };
     
 	this.units = function () { 
-        return myStatus.units;
+        return units;
     };
     
 
@@ -324,16 +321,16 @@ module.exports = pulse;
 		);
 
 		If (statusUpdateCB.status.contains('Disarmed'))
-					 myStatus.status = 'Disarmed';
+					 status = 'Disarmed';
 		If (statusUpdateCB.status.contains('Stay'))
-					 myStatus.status='Stay';
+					 status='Stay';
 		If (statusUpdateCB.status.contains('Away'))
-					 myStatus.status='Away';
+					 status='Away';
 
-		myStatus.instance = matches[0];
-		myStatus.units = matches[2];
+		instance = matches[0];
+		units = matches[2];
 		
-		console.log(myStatus.status);
+		console.log(status);
 
 
 		return deferred.promise;
