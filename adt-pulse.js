@@ -2,9 +2,9 @@ var tough = require('tough-cookie');
 var request = require('request');
 var q = require('q');
 var cheerio = require('cheerio');
-var state = 'unknown';
-var instance = '';
-var units = '';
+var adt-status = 'unknown';
+var adt-instance = '';
+var adt-units = '';
     
 //Cookie jar
 var j;
@@ -35,15 +35,15 @@ pulse = function(username, password) {
 	var pulseInterval = setInterval(this.sync.bind(this),5000);
 
 	this.status = function () { 
-        return state;
+        return adt-status;
     };
     
 	this.instance = function () { 
-        return instance;
+        return adt-instance;
     };
     
 	this.units = function () { 
-        return units;
+        return adt-units;
     };
     
 
@@ -321,16 +321,16 @@ module.exports = pulse;
 		);
 
 		If (statusUpdateCB.status.contains('Disarmed'))
-					 state = 'Disarmed';
+					 adt-status = 'Disarmed';
 		If (statusUpdateCB.status.contains('Stay'))
-					 state='Stay';
+					 adt-status='Stay';
 		If (statusUpdateCB.status.contains('Away'))
-					 state='Away';
+					 adt-status='Away';
 
-		instance = matches[0];
-		units = matches[2];
+		adt-instance = matches[0];
+		adt-units = matches[2];
 		
-		console.log(state);
+		console.log(adt-status);
 
 
 		return deferred.promise;
