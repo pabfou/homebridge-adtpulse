@@ -57,7 +57,7 @@ module.exports = pulse;
 		}
 	},
 
-  this.status = function () {
+  this.astatus = function () {
     return adtstatus;
   },
 

@@ -45,7 +45,7 @@ getState() {
 	//login and update alarm status
 	myAlarm.login();
 	myAlarm.updateAll();
-	alarmstatus = myAlarm.status();
+	alarmstatus = myAlarm.astatus();
 
 	If (alarmstatus.contains('Disarmed'))
 		return Characteristic.SecuritySystemCurrentState.DISARMED;
