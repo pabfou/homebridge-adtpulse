@@ -5,7 +5,7 @@ var cheerio = require('cheerio');
 var adt-status = 'unknown';
 var adt-instance = '';
 var adt-units = '';
-    
+
 //Cookie jar
 var j;
 
@@ -34,18 +34,17 @@ pulse = function(username, password) {
   	/* heartbeat */
 	var pulseInterval = setInterval(this.sync.bind(this),5000);
 
-	this.status = function () { 
+	this.status = function () {
         return adt-status;
     };
-    
-	this.instance = function () { 
+
+	this.instance = function () {
         return adt-instance;
     };
-    
-	this.units = function () { 
+
+	this.units = function () {
         return adt-units;
-    };
-    
+    }
 
 };
 
@@ -329,7 +328,7 @@ module.exports = pulse;
 
 		adt-instance = matches[0];
 		adt-units = matches[2];
-		
+
 		console.log(adt-status);
 
 
