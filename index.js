@@ -115,7 +115,7 @@ getState: function(callback) {
 				'User-Agent': ua
 			},
 		},
-		function(err, httpResponse, body) {
+		function(error, httpResponse, body) {
 
 			if (error) {
 				this.log('GetState function failed: %s', error.message);
@@ -212,8 +212,8 @@ setTargetState: function(state, callback) {
 				'Referer': 'https://portal.adtpulse.com/myhome/summary/summary.jsp'
 			},
 		},
-		function(err, httpResponse, body) {
-			if(err){
+		function(error, httpResponse, body) {
+			if(error){
 				console.log('SetState function failed: %s', error.message);
 				callback(error);
 			} else {
@@ -228,13 +228,15 @@ setTargetState: function(state, callback) {
 getCurrentState: function(callback) {
 		this.log("Getting current state");
 		this.login();
-		this.getState();
+		currentstate = this.getState();
+		callback(currentstate);
 },
 
 getTargetState: function(callback) {
 	this.log("Getting target state");
 	this.login();
-	this.getState();
+	targetstate = this.getState();
+	callback(targetstate);
 },
 
 identify: function(callback) {
